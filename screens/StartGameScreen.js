@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Alert, Button, Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from "react-native";
+import BodyText from "../components/BodyText";
 import Card from "../components/Card";
 import Input from "../components/Input";
+import TitleText from "../components/TitleText";
 import Colors from "../constants/colors";
 
 const StartGameScreen = (props) => {
@@ -33,8 +35,8 @@ const StartGameScreen = (props) => {
 
     if(confirmed) { 
         confirmedOutput = <Card style={styles.confirmCard}>
-        <Text>Your number:</Text>
-        <Text style={styles.chosenNumber}>{selectedNumber}</Text>
+        <BodyText>Your number:</BodyText>
+        <BodyText style={styles.chosenNumber}>{selectedNumber}</BodyText>
         <Button title="Start Game!" color={Colors.primary} onPress={() => {
             props.onStartGame(selectedNumber)
         }}/>
@@ -43,9 +45,9 @@ const StartGameScreen = (props) => {
   return (
     <TouchableWithoutFeedback onPress={()=> {Keyboard.dismiss()}}>
     <View style={styles.screen}>
-      <Text style={styles.title}>Start a new game!</Text>
+      <TitleText style={styles.title}>Start a new game!</TitleText>
       <Card style={styles.inputContainer}>
-        <Text>Select a Number</Text>
+        <BodyText>Select a Number</BodyText>
         <Input blurOnSubmit keyboardType="number-pad" onChangeText={onChange} value={enteredValue} />
         <View style={styles.buttonContainer}>
           <Button
