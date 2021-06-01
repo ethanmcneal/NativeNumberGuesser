@@ -48,13 +48,14 @@ const GamesScreen = (props) => {
     return(
         <View style={styles.screen}>
             <View style={styles.confirmCard}>
-        <Text>Computer Guessed:</Text>
-        <Text style={styles.chosenNumber}>{currentGuess}</Text>
-        
-        </View>
+                <Text>Computer Guessed:</Text>
+            </View>
         <Card style={styles.buttonContainer}>
-            <Button title='lower' onPress={nextGuessHandler.bind(this, 'lower')}/>
-            <Button title='higher' onPress={nextGuessHandler.bind(this, 'greater')}/>
+            <Button title='lower' onPress={nextGuessHandler.bind(this, 'lower')} color='red'/>
+            
+            <Text style={styles.chosenNumber}>{currentGuess}</Text>
+            
+            <Button title='higher' onPress={nextGuessHandler.bind(this, 'greater')} color={Colors.primary}/>
         </Card>
 
         </View>
@@ -67,7 +68,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonContainer: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        width: '70%',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
     confirmCard: {
         marginVertical: 20,
@@ -82,7 +86,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         padding: 8,
         borderRadius: 8,
-        marginVertical: 15,
+        marginVertical: 8,
     }
 })
 
