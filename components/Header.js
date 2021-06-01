@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     headerTitle: {
         color: '#222',
         fontSize: 18,
+        fontFamily: 'open-sans-bold'
     }
 });
 
